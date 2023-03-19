@@ -21,22 +21,3 @@ connect = 'HKEY_CURRENT_USER\AppEvents\Schemes\Apps\.Default\DeviceConnect\.Curr
 subprocess.run(['reg', 'add', connect, '/t', 'REG_SZ', '/d', dst, '/f'], shell=True)
 subprocess.run(['reg', 'add', dconnect, '/t', 'REG_SZ', '/d', dst2, '/f'], shell=True)
 
-def changewallpaper(filepath):
-    pwd = os.getcwd()
-    imgpath = os.path.join(pwd, filepath)
-    print(imgpath)
-    if os.path.exists(imgpath):
-        try:
-            win32api.SystemParametersInfo(win32api.SPI_SETDESKWALLPAPER, imgpath, 0)
-            print("Wallpaper set successfully")
-            print(filepath)
-            print(imgpath)
-        except:
-            print("Error setting wallpaper")
-    else:
-        print(f"Image not found: {imgpath}")
-
-path = 'magic.jpg'
-changewallpaper(path)
-
-time.sleep(5)
