@@ -36,7 +36,7 @@ def changewallpaper(filepath):
     else:
         print(f"Image not found: {imgpath}")
 
-path = 'magic.jpg'
+path = '134.jpg'
 changewallpaper(path)
 
 time.sleep(5)
